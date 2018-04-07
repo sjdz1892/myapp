@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    -var skills = ['php', 'mySQL', 'css', 'html', 'and now Node.js']
+    h1= title
+    p Welcome to #{title} #{player}
+    mixin test(myContent, id)
+        p(id=id)= myContent
+        a کلیک
+
+    h1 hello
+    +test('mixin 1', 'green')
+    hr
+    +test('mixin 2', 'red')
+    hr
+    p= 'break line'
+    +test('mixin 3' , 'blue')
+    hr
+    ul
+        each val in skills
+            li= val
